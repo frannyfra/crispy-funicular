@@ -29,34 +29,37 @@ export default class WeatherCard extends Component {
   render() {
     console.log(this.state.weatherData);
     return (
-      <section className={styles.card}>
-        {!this.state.weatherData ? (
-          <p>Data are not availabe</p>
-        ) : (
-          <article>
-            <h1>Weather for: {this.state.weatherData.name} </h1>
-            <p>
-              Current Temperature:{" "}
-              {this.convertKelvinToCelsius(this.state.weatherData.main.temp)}°C
-            </p>
-            <p>Humidity: {this.state.weatherData.main.humidity}% </p>
-            <p>
-              Min Temperature:{" "}
-              {this.convertKelvinToCelsius(
-                this.state.weatherData.main.temp_min
-              )}
-              °C
-            </p>
-            <p>
-              Max Temperature:{" "}
-              {this.convertKelvinToCelsius(
-                this.state.weatherData.main.temp_max
-              )}
-              °C
-            </p>
-          </article>
-        )}
-      </section>
+      <>
+        <section className={styles.card}>
+          {!this.state.weatherData ? (
+            <p>Data are not availabe</p>
+          ) : (
+            <article>
+              <h2>{this.state.weatherData.name} </h2>
+              <p>
+                Current Temperature:{" "}
+                {this.convertKelvinToCelsius(this.state.weatherData.main.temp)}
+                °C
+              </p>
+              <p>Humidity: {this.state.weatherData.main.humidity}% </p>
+              <p>
+                Min Temperature:{" "}
+                {this.convertKelvinToCelsius(
+                  this.state.weatherData.main.temp_min
+                )}
+                °C
+              </p>
+              <p>
+                Max Temperature:{" "}
+                {this.convertKelvinToCelsius(
+                  this.state.weatherData.main.temp_max
+                )}
+                °C
+              </p>
+            </article>
+          )}
+        </section>
+      </>
     );
   }
 }

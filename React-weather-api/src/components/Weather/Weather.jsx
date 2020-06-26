@@ -15,6 +15,7 @@ export default class Weather extends Component {
     console.log(city_id);
     return (
       <>
+       
         {city_id.map((value, index) => {
           return (
             <WeatherCard key={index} city={value}>
